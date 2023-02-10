@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { bykesData } from '../data/bykes.data';
+import { Byke } from 'src/model/byke.model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Assignment_1';
+
+  bykes = bykesData;
+
+  onMovieSelected(byke: Byke) {
+    console.log("App Component onMovieSelected", byke);
+  }
 }
+

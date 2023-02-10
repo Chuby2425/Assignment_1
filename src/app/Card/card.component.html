@@ -1,0 +1,16 @@
+<mat-card class="example-card mt-3" [ngClass]="cardClasses()">
+    <mat-card-header>
+        <mat-card-title>{{ byke.brand }}</mat-card-title>
+        <mat-card-subtitle>{{ byke.model }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ byke.photo }}" *ngIf="isImageAvailable(); else noImage">
+    <ng-template #noImage>
+        <p>No image available</p>
+    </ng-template>
+    <mat-card-content>
+        <div>{{byke.Cc}}</div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="onCardClicked()" class="btn btn-primary">View Bike</button>
+    </mat-card-actions>
+</mat-card>
